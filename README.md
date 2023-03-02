@@ -1,4 +1,4 @@
-# Slow Admin
+# Slow Webman
 
 ***
 基于 `webman` 、 `slow-admin` 、 `amis` 开发的后台框架.
