@@ -47,7 +47,6 @@
   },
   "autoload": {
     "psr-4": {
-      "Wow3\\Admin\\" : "vendor/wow3/admin/src",
       "": "./",
       "app\\": "./app",
       "App\\": "./app",

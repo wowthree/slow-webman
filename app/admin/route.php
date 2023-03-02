@@ -17,6 +17,10 @@ use Webman\Route;
 use app\admin\controller;
 use app\middleware\AuthCheck;
 
+Route::get('/admin', function () {
+    return response()->file(base_path('public/admin/index.html'));
+});
+
 Route::group('/' . trim(config('admin.route.prefix'), '/'), function () {
     Route::post('/login', [controller\AuthController::class, 'login']);
     Route::get('/logout', [controller\AuthController::class, 'logout']);

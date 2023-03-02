@@ -34,8 +34,4 @@ return [
     'show_development_tools'               => true,
     // 是否显示 [权限] 功能中的自动生成按钮
     'show_auto_generate_permission_button' => true,
-    // 拓展
-    'extension' => [
-        'dir' => base_path('extensions'),
-    ],
 ];
