@@ -1,0 +1,56 @@
+<?php
+
+namespace {{ Namespace }};
+
+use support\Response;
+use app\admin\renders\Page;
+use app\admin\renders\Form;
+use app\admin\renders\TableColumn;
+use app\admin\renders\TextControl;
+use JsonSerializable;
+use app\admin\controller\AdminController;
+use {{ UseService }};
+
+class {{ ClassName }} extends AdminController
+{
+    protected string $serviceName = {{ ServiceName }}::class;
+
+    protected string $queryPath = '{{ QueryPath }}';
+
+    protected string $pageTitle = '{{ PageTitle }}';
+
+    public function index(): Response|JsonSerializable
+    {
+        if ($this->actionOfGetData()) {
+            return $this->response()->success($this->service->list());
+        }
+
+        return $this->response()->success($this->list());
+    }
+
+    public function list(): Page
+    {
+        $crud = $this->baseCRUD()
+            ->filterTogglable(false)
+            ->columns([
+                {{ ListContent }}
+                $this->rowActions(),
+            ]);
+
+        return $this->baseList($crud);
+    }
+
+    public function form(): Form
+    {
+        return $this->baseForm()->body([
+            {{ FormContent }}
+        ]);
+    }
+
+    public function detail($id): Form
+    {
+        return $this->baseDetail($id)->body([
+            {{ DetailContent }}
+        ]);
+    }
+}

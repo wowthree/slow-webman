@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ Namespace }};
+
+use {{ UseModel }};
+use app\service\AdminService;
+
+class {{ ClassName }} extends AdminService
+{
+    protected string $modelName = {{ ModelName }}::class;
+}

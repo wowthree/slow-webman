@@ -1,0 +1,15 @@
+<?php
+
+namespace {{ Namespace }};
+
+{{ ImportSoftDelete }}
+use app\model\BaseModel as Model;
+
+class {{ ClassName }} extends Model
+{
+    {{ SoftDelete }}
+
+    {{ ModelTable }}
+    {{ ModelKey }}
+    {{ Timestamp }}
+}

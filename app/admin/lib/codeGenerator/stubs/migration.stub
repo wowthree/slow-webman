@@ -1,0 +1,23 @@
+<?php
+
+declare(strict_types=1);
+
+use Phinx\Db\Adapter\MysqlAdapter;
+use Phinx\Migration\AbstractMigration;
+
+final class {{ className }} extends AbstractMigration
+{
+    /**
+     * Change Method.
+     *
+     * options: length , default, null(允许空), after(放置在哪个字段后), comment, precision与scale,
+     *       signed, values(enum), update与delete(外键)
+     *
+     * @return void
+     */
+    public function change()
+    {
+        {{ content }}
+    }
+
+}
